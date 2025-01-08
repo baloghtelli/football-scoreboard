@@ -1,0 +1,15 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.footer {
+  width: 100%;
+  padding-block: $spacing-32;
+  padding-inline: $spacing-24;
+  background-color: $midnight-blue;
+}
+
+.copyright {
+  font-size: $font-size-12;
+  color: $off-white;
+  text-align: center;
+}
