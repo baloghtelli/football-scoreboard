@@ -4,7 +4,8 @@ import Header from "@/components/Header/Header";
 import SearchInput from "@/components/SearchInput/SearchInput";
 import Footer from "@/components/Footer/Footer";
 import { Rajdhani, Inter } from "next/font/google";
-import React, { useState } from "react";
+import React from "react";
+import { SearchProvider } from "@/contexts/SearchContext";
 
 const rajdhani = Rajdhani({
   subsets: ["latin"],
@@ -22,27 +23,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [openSearch, setOpenSearch] = useState(false);
-
-  const handleOpenSearch = () => {
-    setOpenSearch(true);
-  };
-
-  const handleCloseSearch = () => {
-    setOpenSearch(false);
-  };
-
+  
   return (
     <html lang="en">
       <body className={`${rajdhani.variable} ${inter.variable}`}>
+        <SearchProvider>
         <div className="layoutContainer">
-          <Header onSearchClick={handleOpenSearch} />
-          {openSearch && (
-            <SearchInput openSearch={openSearch} onClose={handleCloseSearch} />
-          )}
+          <Header />
+          <SearchInput />
           <main className='content'>{children}</main>
           <Footer />
         </div>
+        </SearchProvider>
+        
       </body>
     </html>
   );
