@@ -1,0 +1,43 @@
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+
+.searchOverlay {
+  width: 100%;
+  height: 100vh;
+  padding: $spacing-16;
+  @include flex(column, start, center);
+}
+
+.searchInputContainer {
+  width: 100%;
+  gap: $spacing-8;
+  @include flex(row, center, center);
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 800px;
+  padding-block: $spacing-12;
+  padding-inline: $spacing-8;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: $off-white;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $golden-yellow;
+  }
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+}
+
+.closeIcon {
+  font-size: $font-size-20;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}

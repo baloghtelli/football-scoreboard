@@ -1,6 +1,9 @@
-import '../styles/globals.scss';
-import Header from '../components/Header';
+'use client';
+import '@/styles/globals.scss';
+import Header from '@/components/Header/Header';
+import SearchInput from '@/components/SearchInput/SearchInput';
 import { Rajdhani, Inter } from "next/font/google";
+import React, { useState } from 'react';
 
 
 const rajdhani = Rajdhani({
@@ -21,10 +24,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [openSearch, setOpenSearch] = useState(false);
+
+  const handleOpenSearch = () => {
+    setOpenSearch(true);
+  }
+
+  const handleCloseSearch = () => {
+    setOpenSearch(false);
+  }
+
   return (
     <html lang="en">
       <body className={`${rajdhani.variable} ${inter.variable}`}>
-        <Header />
+        <Header onSearchClick={handleOpenSearch} />
+        {openSearch && (
+          <SearchInput openSearch={openSearch} onClose={handleCloseSearch} />
+        )}
         {children}
       </body>
     </html>
