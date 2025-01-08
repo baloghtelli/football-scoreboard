@@ -4,13 +4,11 @@ import '@/styles/globals.scss';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useSearch } from '@/contexts/SearchContext';
 
-interface HeaderProps {
-  onSearchClick: () => void;
-}
 
-export default function Header({onSearchClick}: HeaderProps) {
-  
+export default function Header() {
+  const { setOpenSearch } = useSearch();
   
   return (
     <header className={styles.header}>
@@ -21,11 +19,11 @@ export default function Header({onSearchClick}: HeaderProps) {
           width={50}
           height={50}
         />  
-        <h1 className={styles.headerTitle}>Scoretrack</h1>
+        <h1 className={styles.headerTitle}>ScoreTrack PL</h1>
       </div>
       
       <div className={styles.searchContainer}>
-        <button onClick={onSearchClick} className={styles.searchButton}>
+        <button onClick={() => setOpenSearch(true)} className={styles.searchButton}>
           <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.searchIcon} />
         </button>
   

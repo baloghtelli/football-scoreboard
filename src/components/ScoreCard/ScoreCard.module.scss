@@ -1,0 +1,54 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.scoreCard {
+  @include flex(row, start, center);
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid $black;
+  background-color: $off-white;
+  
+  &:hover {
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+  }
+}
+
+.matchMinuteContainer {
+  display: flex;
+  align-items: center;
+  padding-inline: $spacing-16;
+  background-color: $light-green;
+  height: 100%;
+}
+
+.matchMinute {
+  color: $off-white;
+  font-size: $font-size-14;
+}
+
+.matchScoreContainer {
+  @include flex(column, center, center);
+  padding-inline: $spacing-8;
+  background-color: $dark-green;
+  height: 100%;
+  gap: $spacing-4;
+}
+
+.matchScore {
+  font-size: $font-size-14;
+  color: $off-white;
+}
+
+.matchFixture {
+  @include flex(column, center, start);
+  padding-inline: $spacing-12;
+  height: 100%;
+  gap: 2px;
+}
+
+.team {
+  @include flex(row, center, center);
+  gap: 8px;
+  font-size: $font-size-14;
+}

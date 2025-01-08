@@ -3,13 +3,11 @@ import React from "react";
 import styles from "./SearchInput.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useSearch } from '@/contexts/SearchContext';
 
-interface SearchInputProps {
-  openSearch: boolean;
-  onClose: () => void;
-}
 
-export default function SearchInput({ openSearch, onClose }: SearchInputProps) {
+export default function SearchInput() {
+  const { openSearch, setOpenSearch } = useSearch();
   if (!openSearch) return null;
 
   return (
@@ -21,7 +19,7 @@ export default function SearchInput({ openSearch, onClose }: SearchInputProps) {
           placeholder="Search for teams..."
           autoFocus={true}
         />
-        <button onClick={onClose} className={styles.closeButton}>
+        <button onClick={() => setOpenSearch(false)} className={styles.closeButton}>
           <FontAwesomeIcon icon={faXmark} className={styles.closeIcon} />
         </button>
       </div>
