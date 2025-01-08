@@ -1,13 +1,9 @@
 import React from "react";
 import styles from "./ScoreCard.module.scss";
 import Image from "next/image";
-import { useSearch } from "@/contexts/SearchContext";
 
 export default function ScoreCard() {
-  const { openSearch } = useSearch();
 
-  if (openSearch) return null;
-  
   return (
     <div className={styles.scoreCard}>
       <div className={styles.matchMinuteContainer}>

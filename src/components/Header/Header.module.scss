@@ -1,5 +1,5 @@
-@import '@/styles/variables.scss';
-@import '@/styles/mixins.scss';
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
 
 .header {
   width: 100%;
@@ -30,7 +30,7 @@
     outline: none;
     border: none;
   }
-  
+
   .searchIcon {
     width: 24px;
     height: 24px;
@@ -44,3 +44,6 @@
 
 }
 
+.link {
+  text-decoration: none;
+}
