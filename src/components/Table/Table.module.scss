@@ -1,0 +1,46 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.table {
+  @include flex(column, center, start);
+  width: 100%;
+}
+
+
+.tableRow {
+  @include flex(row, space-between, center);
+  padding-inline-start: $spacing-24;
+  padding-inline-end: $spacing-16;
+  height: 52px;
+  width: 100%;
+}
+
+.tableRow:nth-child(odd) {
+  background-color: #fff;
+}
+
+.leftRow {
+  @include flex(row, start, center);
+  flex: 1;
+  gap: $spacing-16;
+}
+
+.rightRow {
+  @include flex(row, end, center);
+  flex: 1;
+}
+
+.leftRow span,
+.rightRow span {
+  font-size: $font-size-14;
+}
+
+.rightRow span {
+  width: 40px;
+  text-align: center;
+}
+
+.leftRow span:first-child,
+.rightRow span:last-child {
+  font-weight: 700;
+}
