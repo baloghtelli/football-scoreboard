@@ -1,0 +1,46 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.header {
+  width: 100%;
+  padding-block: $spacing-32;
+  padding-inline-start: $spacing-16;
+  padding-inline-end: $spacing-24;
+  background-color: $midnight-blue;
+  gap: $spacing-16;
+
+  @include flex(row, space-between, center);
+}
+
+.headerTitle {
+  font-size: $font-size-24;
+  color: $off-white;
+}
+
+.title {
+  @include flex(row, start, center);
+}
+
+.searchContainer {
+  @include flex(row, start, center);
+  gap: $spacing-8;
+
+  .searchButton {
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+  
+  .searchIcon {
+    width: 24px;
+    height: 24px;
+    color: $off-white;
+
+    &:hover {
+      color: hsla(0, 0%, 96%, 0.827);
+      cursor: pointer;
+    }
+  }
+
+}
+
